@@ -1,0 +1,53 @@
+/* CSS Document */
+.swiper-viewport {
+	margin: 0px;
+	z-index: 1;
+	width: 100%;
+	position: relative;
+	overflow: hidden;
+}
+/* OpenCart Code */
+.main-slider .swiper-wrapper, .swiper-container {
+	direction: ltr !important;
+}
+.swiper-pagination {
+    bottom: 15px;
+    left: 0;
+    text-align: center;
+    width: 100%;
+}
+.swiper-pagination-bullet {
+	display: inline-block;
+    margin: 0 3px;
+    opacity: 1;
+    cursor: pointer;
+    width: 8px;
+    height: 8px;
+    text-indent: -9999px;
+    background-color: #1a1a1a;
+    -webkit-transition: all 500ms ease;
+    -moz-transition: all 500ms ease;
+    -o-transition: all 500ms ease;
+    transition: all 500ms ease;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    border-radius: 5px;
+}
+.swiper-pagination-bullet:hover,
+.swiper-pagination-bullet-active {
+	background:#9174ce;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+.swiper-pagination-bullet-active{
+    width: 30px;
+}
+.swiper-button-next.swiper-button-disabled, .swiper-button-prev.swiper-button-disabled {
+    opacity: 0;
+    cursor: pointer;
+    pointer-events: auto;
+}

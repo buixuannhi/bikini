@@ -1,4 +1,4 @@
-<?php  
+<?php
  $menu=config('MenuAdmin');
  ?>
     <!-- Main Sidebar Container -->
@@ -19,7 +19,8 @@
                         alt="User Image">
                 </div>
                 <div class="info">
-                    <a href="#" class="d-block">Alexander Pierce</a>
+                    <a href="#" class="d-block">{{Auth()->user()->name}}</a>
+                    <a href="{{route('admin.logout')}}" class="d-block">logout</a>
                 </div>
             </div>
 
@@ -46,7 +47,7 @@
                     <li class="nav-item">
                         <a href="@if($m['label']=='Home')
                         {{route('admin.index')}}
-                        @else 
+                        @else
                         {{route('admin.file')}}
                         @endif
                   " class="nav-link">

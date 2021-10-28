@@ -11,6 +11,10 @@
     <button type="submit" class="btn btn-primary mr-2"><i class="fas fa-search"></i></button>
     <a href="{{route('category.create')}}" class="btn btn-success"><i class="fas fa-plus"></i>Thêm mới</a>
 </form>
+<form class="text-right" action="" method="get">
+   <input type="number " name="cc">
+    <button type="submit" class="btn btn-primary mr-2">update</button>
+</form>
 
 <hr>
 <form action="{{route('category.DeleteAll')}}" method="POST">
@@ -21,7 +25,7 @@
         <tr>
            <th>
                 <input type="checkbox" id="checkall">
-            </th> 
+            </th>
             <th>Id</th>
             <th>Name</th>
             <th>Status</th>
@@ -39,19 +43,19 @@
             <td>{{$model->id}}</td>
             <td>{{$model->name}}</td>
             <td>{{$model->status == 0 ? 'Ẩn' : 'Hiển thị'}}</td>
-            <td>{{$model->created_at->format('d-m-Y')}}</td>
+            <td>{{$model->created_at}}</td>
             <td>{{$model->prods->count()}}</td>
-            <td class="text-right">                  
+            <td class="text-right">
                <a href="{{route('category.edit',$model->id)}}" class="btn btn-primary btn-sm" title="Sửa"><i class="fas fa-edit"></i></a>
                 <a href="{{route('category.destroy',$model->id)}}" class="btn btn-danger btn-delete btn-sm" title="Xóa bỏ" onclick="return confirm('Chắc chưa ?!')">
-                <i class="fas fa-trash"></i></a>       
+                <i class="fas fa-trash"></i></a>
 
             </td>
         </tr>
         @endforeach
     </tbody>
 </table>
-    
+
 </form>
 <hr>
 <form action="" method="post" id="delete-form">

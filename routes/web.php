@@ -17,8 +17,11 @@ Route::group(['prefix' => ''], function(){
     Route::get('/','HomeController@index')->name('home.index');
 });
 
+Route::get('/Admin/login','Admin\AdminController@login')->name('admin.login');
+Route::post('/Admin/login','Admin\AdminController@checklogin')->name('admin.login');
+Route::get('/Admin/logout','Admin\AdminController@logout')->name('admin.logout');
 
-Route::group(['prefix' => 'admin','namespace'=>'Admin'], function(){
+Route::group(['prefix' => 'admin','namespace'=>'Admin','middleware'=>'auth'], function(){
     Route::get('/','AdminController@index')->name('admin.index');
     Route::get('/file','AdminController@file')->name('admin.file');
     //category
@@ -32,5 +35,5 @@ Route::group(['prefix' => 'admin','namespace'=>'Admin'], function(){
         'category' => 'CategoryController',
         'product' => 'ProductController'
     ]);
-    
+
 });

@@ -227,6 +227,14 @@
 <script src="{{url('public/admin')}}/dist/js/adminlte.min.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="{{url('public/admin')}}/dist/js/demo.js"></script>
+<script src="{{asset('public/ckeditor/ckeditor.js')}}"></script>
+<script>
+    CKEDITOR.replace( 'editor-ckeditor' ,{
+        filebrowserBrowseUrl : '/do-an/public/file/dialog.php?type=2&editor=ckeditor&fldr=',
+        filebrowserUploadUrl : '/do-an/public/file/dialog.php?type=2&editor=ckeditor&fldr=',
+        filebrowserImageBrowseUrl : '/do-an/public/file/dialog.php?type=1&editor=ckeditor&fldr='
+    });
+</script>
 @yield('js')
 </body>
 </html>

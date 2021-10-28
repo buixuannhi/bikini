@@ -10,10 +10,10 @@ class Category extends Model
 {
     use HasFactory,SoftDeletes;
 
-    protected $table = 'category';
+    protected $table = 'categories';
     protected $dates=['deleted_at'];
     protected $fillable = ['name','status'];
-    
+
     public function prods()
     {
         return $this->hasMany(Product::class,'category_id','id');
@@ -22,6 +22,6 @@ class Category extends Model
         if($key=request()->key){
             $query=$query->where('name','like','%'.$key.'%');
             }
-            return $query;  
+            return $query;
     }
 }
